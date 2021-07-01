@@ -1,3 +1,17 @@
+@import '_fonts.scss';
+
+body{
+	
+}
+
 *{
 	color: red;
+}
+.logo{
+	font-family: "Montserrat";
+	font-style: normal;
+}
+.meme{
+	font-weight: 400;
+	font-style: normal;
 }

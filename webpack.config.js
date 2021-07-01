@@ -1,7 +1,10 @@
 // webpack.config.js
 const path = require('path')
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin'); 
+
 
 module.exports = {
     entry: {
@@ -17,8 +20,27 @@ module.exports = {
             template: path.resolve(__dirname, './src/index.pug'), // шаблон
             filename: 'index.html', // название выходного файла
         }),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, './src/assets'), 
+                    to: path.resolve(__dirname, './dist'), 
+                    
+                }
+            ]
+        }),
+        
     ],
+    resolve: {
+      extensions: [".js"],
+      alias: {
+        source: path.resolve(__dirname, "../src"), // Relative path of src
+        images: path.resolve(__dirname, "../src/assets/images"), // Relative path of images
+        fonts: path.resolve(__dirname, "../src/assets/fonts"), // Relative path of fonts
+      },
+    },
     module: {
         rules: [
             /** Babel **/
@@ -32,6 +54,11 @@ module.exports = {
                     }
                 }
                 // npm install babel-loader @babel/core @babel/preset-env -D
+            },
+            /** html */
+            {
+                test: /\.html$/,
+                use: 'html-loader'
             },
             /** CSS */
             {
@@ -60,6 +87,17 @@ module.exports = {
                 //npm i -D pug-loader
                 //npm i -D pug-loader —force
             },
+
+            
+            /** Картинки */
+            //npm install --save-dev file-loader 
+            {
+                test: /\.(jpg|png|svg|jpeg|gif)$/,
+                type: 'asset/resource'
+            },
+        
+    
+
             /** Шрифты */
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
