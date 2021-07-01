@@ -3,7 +3,6 @@ import './assets/scripts/main.js'
 import './assets/style/style.scss'
 
 
-
 console.log('index js');
 
 //img(src= './assets/images/image.png', alt="picture")

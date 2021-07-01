@@ -1,19 +1,13 @@
-html(lang="ru")
-  head
-    meta(charset="utf-8")
-    title= "Avito"
-  body
-    div#root 
+include ./views/templates/_template.pug
 
-    p(class="logo") logo
-    p(class="meme") meme
+p(class="logo") logo
+p(class="meme") meme
 
 
 
-    img(src=require('./assets/images/1111.png'), alt="picture")
-    img(src=require('./assets/images/image.png'), alt="picture")
+img(src=require('./assets/images/image.png'), alt="picture", width="200")
   
  
 
-    script(src="bundle.js")
-    script(src="index.js")
+script(src="bundle.js")
+script(src="index.js")
