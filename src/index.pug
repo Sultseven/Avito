@@ -1,13 +1,10 @@
 include ./views/templates/_template.pug
-
-p(class="logo") logo
-p(class="meme") meme
+include ./views/components/header.pug
 
 
-
-img(src=require('./assets/images/image.png'), alt="picture", width="200")
-  
- 
+//- include ./views/pages/shop.pug
+p#elem 
+   
 
 script(src="bundle.js")
 script(src="index.js")

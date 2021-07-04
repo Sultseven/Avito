@@ -2,8 +2,19 @@
 import './assets/scripts/main.js'
 import './assets/style/style.scss'
 
+/*
+const items = [{
+	title: 'IMac Pro',
+	year: 2019,
+	price: 1130,
+}];*/
+
+const heading = document.createElement('div');
+heading.textContent = `qwdqwd`;
+
 
 console.log('index js');
+console.log('icasasc');
 
 //img(src= './assets/images/image.png', alt="picture")
 
