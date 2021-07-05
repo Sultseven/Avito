@@ -6,6 +6,11 @@
     font-size: 14px;
     line-height: 20px;
     padding: 10px 0;
+
+    .container{
+        padding: 0 20px;
+    }
+
     .header__row{
     	display: flex;
     	justify-content: space-between;
@@ -56,4 +61,20 @@
 	    text-decoration: none;
     }
 
+}
+
+//--------------------------------------------------shop---------------------------------------------------------------//
+
+.shop{
+    padding: 20px 0px;
+    background: #01aaff;;
+    .shop__container{
+        padding: 0 20px;
+    }
+    .shop__slider{
+        
+    }
+    .shop__content{
+        padding: 10px 0 0 0;
+    }
 }
